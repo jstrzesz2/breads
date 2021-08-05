@@ -1,5 +1,4 @@
 const express = require('express');
-const breads = require('./controllers/breads_controllers');
 
 // CONFIGURATION
 require('dotenv').config();
@@ -17,13 +16,13 @@ app.get('/', (req, res) => {
     res.send('Welcome to an Awesome App about Breads!');
 });
 
+// Breads
+app.use('/breads', breadsController);
+
 // 404 Page
 app.get('*', (req, res) => {
     res.send('404');
 })
-
-// Breads
-app.use('/breads', breadsController);
 
 app.listen(PORT, () => {
     console.log('nomming at port', PORT);
