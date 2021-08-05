@@ -18,6 +18,7 @@ const New = () => {
           type="text"
           name="image"
           id="image"
+          required
         />
         <label htmlFor="hasGluten">Has Gluten?</label>
         <input
